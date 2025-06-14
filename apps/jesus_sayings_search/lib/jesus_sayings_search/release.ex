@@ -47,18 +47,18 @@ defmodule JesusSayingsSearch.Release do
   end
 
   defp run_complete_seeding do
-    # Use direct SQL seeding to avoid Ash schema issues
-    direct_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "direct_seed.exs"])
-    if File.exists?(direct_seed_script) do
-      IO.puts("Running direct SQL seeding...")
-      Code.eval_file(direct_seed_script)
+    # Use massive direct SQL seeding to get all 550+ sayings
+    massive_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "massive_direct_seed.exs"])
+    if File.exists?(massive_seed_script) do
+      IO.puts("Running massive direct SQL seeding for 550+ sayings...")
+      Code.eval_file(massive_seed_script)
     else
-      IO.puts("Warning: direct_seed.exs not found! Falling back to basic seeds...")
-      # Fallback to basic seeds
-      seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "seeds.exs"])
-      if File.exists?(seed_script) do
-        IO.puts("Running basic seeds...")
-        Code.eval_file(seed_script)
+      IO.puts("Warning: massive_direct_seed.exs not found! Falling back to direct seed...")
+      # Fallback to basic direct seed
+      direct_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "direct_seed.exs"])
+      if File.exists?(direct_seed_script) do
+        IO.puts("Running direct SQL seeding...")
+        Code.eval_file(direct_seed_script)
       end
     end
   end
