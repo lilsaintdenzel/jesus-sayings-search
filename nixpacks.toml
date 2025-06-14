@@ -1,15 +1,18 @@
-[phases.setup]
-nixPkgs = ['elixir', 'nodejs', 'erlang']
+[providers]
+elixir = "1.16.3"
+erlang = "26.2.5"
 
-[phases.build]
+[variables]
+MIX_ENV = "prod"
+
+[build]
 cmds = [
-  'mix local.hex --force',
-  'mix local.rebar --force',
-  'mix deps.get --only prod',
-  'mix compile',
-  'mix assets.deploy',
-  'mix release jesus_sayings_search_umbrella'
+    "mix deps.get --only prod",
+    "mix deps.compile", 
+    "mix assets.deploy",
+    "mix phx.digest",
+    "mix release"
 ]
 
 [start]
-cmd = "_build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella start"
+cmd = "./railway-start.sh"

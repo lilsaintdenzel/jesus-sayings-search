@@ -1,1 +1,1 @@
-web: _build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella start
+web: ./railway-start.sh
