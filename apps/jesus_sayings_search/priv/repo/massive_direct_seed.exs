@@ -507,6 +507,195 @@ all_sayings = [
   %{text: "Blessed are you who hunger now, for you will be satisfied. Blessed are you who weep now, for you will laugh.", reference: "6:21", chapter: 6, verse_start: 21, book_id: luke_id, category: "Blessing", theme: "Beatitudes", context: "Sermon on the Plain"},
   %{text: "Blessed are you when people hate you, when they exclude you and insult you and reject your name as evil, because of the Son of Man.", reference: "6:22", chapter: 6, verse_start: 22, book_id: luke_id, category: "Blessing", theme: "Persecution", context: "Sermon on the Plain"},
   
+  # ===== MORE MATTHEW SAYINGS =====
+  %{text: "Listen! The sower went out to sow.", reference: "13:3", chapter: 13, verse_start: 3, book_id: matthew_id, category: "Parable", theme: "Sowing", context: "Parable of the sower"},
+  %{text: "Listen then to what the parable of the sower means:", reference: "13:18", chapter: 13, verse_start: 18, book_id: matthew_id, category: "Teaching", theme: "Interpretation", context: "Explaining the sower"},
+  %{text: "When anyone hears the message about the kingdom and does not understand it, the evil one comes and snatches away what was sown in their heart. This is the seed sown along the path.", reference: "13:19", chapter: 13, verse_start: 19, book_id: matthew_id, category: "Teaching", theme: "Understanding", context: "Explaining the sower"},
+  %{text: "The seed falling on rocky ground refers to someone who hears the word and at once receives it with joy.", reference: "13:20", chapter: 13, verse_start: 20, book_id: matthew_id, category: "Teaching", theme: "Reception", context: "Explaining the sower"},
+  %{text: "But since they have no root, they last only a short time. When trouble or persecution comes because of the word, they quickly fall away.", reference: "13:21", chapter: 13, verse_start: 21, book_id: matthew_id, category: "Teaching", theme: "Endurance", context: "Explaining the sower"},
+  %{text: "The seed falling among the thorns refers to someone who hears the word, but the worries of this life and the deceitfulness of wealth choke the word, making it unfruitful.", reference: "13:22", chapter: 13, verse_start: 22, book_id: matthew_id, category: "Teaching", theme: "Worry", context: "Explaining the sower"},
+  %{text: "But the seed falling on good soil refers to someone who hears the word and understands it. This is the one who produces a crop, yielding a hundred, sixty or thirty times what was sown.", reference: "13:23", chapter: 13, verse_start: 23, book_id: matthew_id, category: "Teaching", theme: "Fruitfulness", context: "Explaining the sower"},
+  
+  # ===== PARABLE OF THE WEEDS =====
+  %{text: "The kingdom of heaven is like a man who sowed good seed in his field.", reference: "13:24", chapter: 13, verse_start: 24, book_id: matthew_id, category: "Parable", theme: "Kingdom", context: "Parable of the weeds"},
+  %{text: "But while everyone was sleeping, his enemy came and sowed weeds among the wheat, and went away.", reference: "13:25", chapter: 13, verse_start: 25, book_id: matthew_id, category: "Parable", theme: "Enemy", context: "Parable of the weeds"},
+  %{text: "When the wheat sprouted and formed heads, then the weeds also appeared.", reference: "13:26", chapter: 13, verse_start: 26, book_id: matthew_id, category: "Parable", theme: "Growth", context: "Parable of the weeds"},
+  %{text: "No, because while you are pulling the weeds, you may uproot the wheat with them.", reference: "13:29", chapter: 13, verse_start: 29, book_id: matthew_id, category: "Teaching", theme: "Patience", context: "Parable of the weeds"},
+  %{text: "Let both grow together until the harvest. At that time I will tell the harvesters: First collect the weeds and tie them in bundles to be burned; then gather the wheat and bring it into my barn.", reference: "13:30", chapter: 13, verse_start: 30, book_id: matthew_id, category: "Parable", theme: "Harvest", context: "Parable of the weeds"},
+  
+  # ===== PARABLE OF THE MUSTARD SEED =====
+  %{text: "The kingdom of heaven is like a mustard seed, which a man took and planted in his field.", reference: "13:31", chapter: 13, verse_start: 31, book_id: matthew_id, category: "Parable", theme: "Kingdom", context: "Parable of mustard seed"},
+  %{text: "Though it is the smallest of all seeds, yet when it grows, it is the largest of garden plants and becomes a tree, so that the birds come and perch in its branches.", reference: "13:32", chapter: 13, verse_start: 32, book_id: matthew_id, category: "Parable", theme: "Growth", context: "Parable of mustard seed"},
+  
+  # ===== PARABLE OF THE YEAST =====
+  %{text: "The kingdom of heaven is like yeast that a woman took and mixed into about sixty pounds of flour until it worked all through the dough.", reference: "13:33", chapter: 13, verse_start: 33, book_id: matthew_id, category: "Parable", theme: "Kingdom", context: "Parable of the yeast"},
+  
+  # ===== HIDDEN TREASURE AND PEARL =====
+  %{text: "The kingdom of heaven is like treasure hidden in a field. When a man found it, he hid it again, and then in his joy went and sold all he had and bought that field.", reference: "13:44", chapter: 13, verse_start: 44, book_id: matthew_id, category: "Parable", theme: "Kingdom", context: "Hidden treasure"},
+  %{text: "Again, the kingdom of heaven is like a merchant looking for fine pearls.", reference: "13:45", chapter: 13, verse_start: 45, book_id: matthew_id, category: "Parable", theme: "Kingdom", context: "Pearl of great price"},
+  %{text: "When he found one of great value, he went away and sold everything he had and bought it.", reference: "13:46", chapter: 13, verse_start: 46, book_id: matthew_id, category: "Parable", theme: "Value", context: "Pearl of great price"},
+  
+  # ===== PARABLE OF THE NET =====
+  %{text: "Once again, the kingdom of heaven is like a net that was let down into the lake and caught all kinds of fish.", reference: "13:47", chapter: 13, verse_start: 47, book_id: matthew_id, category: "Parable", theme: "Kingdom", context: "Parable of the net"},
+  %{text: "When it was full, the fishermen pulled it up on the shore. Then they sat down and collected the good fish in baskets, but threw the bad away.", reference: "13:48", chapter: 13, verse_start: 48, book_id: matthew_id, category: "Parable", theme: "Separation", context: "Parable of the net"},
+  %{text: "This is how it will be at the end of the age. The angels will come and separate the wicked from the righteous", reference: "13:49", chapter: 13, verse_start: 49, book_id: matthew_id, category: "Teaching", theme: "Judgment", context: "Parable of the net"},
+  %{text: "and throw them into the blazing furnace, where there will be weeping and gnashing of teeth.", reference: "13:50", chapter: 13, verse_start: 50, book_id: matthew_id, category: "Warning", theme: "Judgment", context: "Parable of the net"},
+  
+  # ===== JESUS REJECTED AT NAZARETH =====
+  %{text: "A prophet is not without honor except in his own town and in his own home.", reference: "13:57", chapter: 13, verse_start: 57, book_id: matthew_id, category: "Teaching", theme: "Prophet", context: "Rejected at Nazareth"},
+  
+  # ===== DEATH OF JOHN THE BAPTIST =====
+  %{text: "It is not lawful for you to have her.", reference: "14:4", chapter: 14, verse_start: 4, book_id: matthew_id, category: "Rebuke", theme: "Law", context: "John rebukes Herod"},
+  
+  # ===== FEEDING THE FIVE THOUSAND =====
+  %{text: "They do not need to go away. You give them something to eat.", reference: "14:16", chapter: 14, verse_start: 16, book_id: matthew_id, category: "Command", theme: "Provision", context: "Feeding five thousand"},
+  %{text: "Bring them here to me.", reference: "14:18", chapter: 14, verse_start: 18, book_id: matthew_id, category: "Command", theme: "Provision", context: "Feeding five thousand"},
+  
+  # ===== JESUS WALKS ON WATER =====
+  %{text: "Take courage! It is I. Don't be afraid.", reference: "14:27", chapter: 14, verse_start: 27, book_id: matthew_id, category: "Comfort", theme: "Fear", context: "Walking on water"},
+  %{text: "Come.", reference: "14:29", chapter: 14, verse_start: 29, book_id: matthew_id, category: "Invitation", theme: "Faith", context: "Peter walks on water"},
+  %{text: "You of little faith, why did you doubt?", reference: "14:31", chapter: 14, verse_start: 31, book_id: matthew_id, category: "Question", theme: "Doubt", context: "Peter sinks"},
+  
+  # ===== THAT WHICH DEFILES =====
+  %{text: "Why do your disciples break the tradition of the elders? They don't wash their hands before they eat!", reference: "15:2", chapter: 15, verse_start: 2, book_id: matthew_id, category: "Question", theme: "Tradition", context: "Clean and unclean"},
+  %{text: "And why do you break the command of God for the sake of your tradition?", reference: "15:3", chapter: 15, verse_start: 3, book_id: matthew_id, category: "Question", theme: "Tradition", context: "Clean and unclean"},
+  %{text: "For God said, 'Honor your father and mother' and 'Anyone who curses their father or mother is to be put to death.'", reference: "15:4", chapter: 15, verse_start: 4, book_id: matthew_id, category: "Teaching", theme: "Honor", context: "Clean and unclean"},
+  %{text: "But you say that if anyone declares that what might have been used to help their father or mother is 'devoted to God,' they are not to 'honor their father or mother' with it. Thus you nullify the word of God for the sake of your tradition.", reference: "15:5-6", chapter: 15, verse_start: 5, verse_end: 6, book_id: matthew_id, category: "Rebuke", theme: "Tradition", context: "Clean and unclean"},
+  %{text: "You hypocrites! Isaiah was right when he prophesied about you:", reference: "15:7", chapter: 15, verse_start: 7, book_id: matthew_id, category: "Rebuke", theme: "Hypocrisy", context: "Clean and unclean"},
+  %{text: "These people honor me with their lips, but their hearts are far from me.", reference: "15:8", chapter: 15, verse_start: 8, book_id: matthew_id, category: "Rebuke", theme: "Heart", context: "Clean and unclean"},
+  %{text: "They worship me in vain; their teachings are merely human rules.", reference: "15:9", chapter: 15, verse_start: 9, book_id: matthew_id, category: "Rebuke", theme: "Worship", context: "Clean and unclean"},
+  %{text: "Listen and understand.", reference: "15:10", chapter: 15, verse_start: 10, book_id: matthew_id, category: "Command", theme: "Understanding", context: "Clean and unclean"},
+  %{text: "What goes into someone's mouth does not defile them, but what comes out of their mouth, that is what defiles them.", reference: "15:11", chapter: 15, verse_start: 11, book_id: matthew_id, category: "Teaching", theme: "Defilement", context: "Clean and unclean"},
+  %{text: "Do you know that the Pharisees were offended when they heard this?", reference: "15:12", chapter: 15, verse_start: 12, book_id: matthew_id, category: "Question", theme: "Offense", context: "Clean and unclean"},
+  %{text: "Every plant that my heavenly Father has not planted will be pulled up by the roots.", reference: "15:13", chapter: 15, verse_start: 13, book_id: matthew_id, category: "Teaching", theme: "Judgment", context: "Clean and unclean"},
+  %{text: "Leave them; they are blind guides. If the blind lead the blind, both will fall into a pit.", reference: "15:14", chapter: 15, verse_start: 14, book_id: matthew_id, category: "Command", theme: "Blindness", context: "Clean and unclean"},
+  %{text: "Are you still so dull?", reference: "15:16", chapter: 15, verse_start: 16, book_id: matthew_id, category: "Question", theme: "Understanding", context: "Clean and unclean"},
+  %{text: "Don't you see that whatever enters the mouth goes into the stomach and then out of the body?", reference: "15:17", chapter: 15, verse_start: 17, book_id: matthew_id, category: "Question", theme: "Body", context: "Clean and unclean"},
+  %{text: "But the things that come out of a person's mouth come from the heart, and these defile them.", reference: "15:18", chapter: 15, verse_start: 18, book_id: matthew_id, category: "Teaching", theme: "Heart", context: "Clean and unclean"},
+  %{text: "For out of the heart come evil thoughts—murder, adultery, sexual immorality, theft, false testimony, slander.", reference: "15:19", chapter: 15, verse_start: 19, book_id: matthew_id, category: "Teaching", theme: "Evil", context: "Clean and unclean"},
+  %{text: "These are what defile a person; but eating with unwashed hands does not defile them.", reference: "15:20", chapter: 15, verse_start: 20, book_id: matthew_id, category: "Teaching", theme: "Defilement", context: "Clean and unclean"},
+  
+  # ===== THE CANAANITE WOMAN =====
+  %{text: "I was sent only to the lost sheep of Israel.", reference: "15:24", chapter: 15, verse_start: 24, book_id: matthew_id, category: "Teaching", theme: "Mission", context: "Canaanite woman"},
+  %{text: "It is not right to take the children's bread and toss it to the dogs.", reference: "15:26", chapter: 15, verse_start: 26, book_id: matthew_id, category: "Teaching", theme: "Priority", context: "Canaanite woman"},
+  %{text: "Woman, you have great faith! Your request is granted.", reference: "15:28", chapter: 15, verse_start: 28, book_id: matthew_id, category: "Declaration", theme: "Faith", context: "Canaanite woman"},
+  
+  # ===== FEEDING THE FOUR THOUSAND =====
+  %{text: "I have compassion for these people; they have already been with me three days and have nothing to eat. I do not want to send them away hungry, or they may collapse on the way.", reference: "15:32", chapter: 15, verse_start: 32, book_id: matthew_id, category: "Teaching", theme: "Compassion", context: "Feeding four thousand"},
+  %{text: "How many loaves do you have?", reference: "15:34", chapter: 15, verse_start: 34, book_id: matthew_id, category: "Question", theme: "Provision", context: "Feeding four thousand"},
+  
+  # ===== DEMAND FOR A SIGN =====
+  %{text: "When evening comes, you say, 'It will be fair weather, for the sky is red,'", reference: "16:2", chapter: 16, verse_start: 2, book_id: matthew_id, category: "Teaching", theme: "Signs", context: "Demand for a sign"},
+  %{text: "and in the morning, 'Today it will be stormy, for the sky is red and overcast.' You know how to interpret the appearance of the sky, but you cannot interpret the signs of the times.", reference: "16:3", chapter: 16, verse_start: 3, book_id: matthew_id, category: "Rebuke", theme: "Signs", context: "Demand for a sign"},
+  %{text: "A wicked and adulterous generation looks for a sign, but none will be given it except the sign of Jonah.", reference: "16:4", chapter: 16, verse_start: 4, book_id: matthew_id, category: "Rebuke", theme: "Signs", context: "Demand for a sign"},
+  
+  # ===== THE YEAST OF THE PHARISEES =====
+  %{text: "Be careful. Be on your guard against the yeast of the Pharisees and Sadducees.", reference: "16:6", chapter: 16, verse_start: 6, book_id: matthew_id, category: "Warning", theme: "Teaching", context: "Yeast of Pharisees"},
+  %{text: "You of little faith, why are you talking among yourselves about having no bread?", reference: "16:8", chapter: 16, verse_start: 8, book_id: matthew_id, category: "Question", theme: "Faith", context: "Yeast of Pharisees"},
+  %{text: "Do you still not understand? Don't you remember the five loaves for the five thousand, and how many basketfuls you gathered?", reference: "16:9", chapter: 16, verse_start: 9, book_id: matthew_id, category: "Question", theme: "Understanding", context: "Yeast of Pharisees"},
+  %{text: "Or the seven loaves for the four thousand, and how many basketfuls you gathered?", reference: "16:10", chapter: 16, verse_start: 10, book_id: matthew_id, category: "Question", theme: "Memory", context: "Yeast of Pharisees"},
+  %{text: "How is it you don't understand that I was not talking to you about bread? But be on your guard against the yeast of the Pharisees and Sadducees.", reference: "16:11", chapter: 16, verse_start: 11, book_id: matthew_id, category: "Question", theme: "Understanding", context: "Yeast of Pharisees"},
+  
+  # ===== PETER DECLARES JESUS AS MESSIAH =====
+  %{text: "Who do people say the Son of Man is?", reference: "16:13", chapter: 16, verse_start: 13, book_id: matthew_id, category: "Question", theme: "Identity", context: "Peter's declaration"},
+  %{text: "But what about you? Who do you say I am?", reference: "16:15", chapter: 16, verse_start: 15, book_id: matthew_id, category: "Question", theme: "Identity", context: "Peter's declaration"},
+  %{text: "Blessed are you, Simon Bar-Jonah, for this was not revealed to you by flesh and blood, but by my Father in heaven.", reference: "16:17", chapter: 16, verse_start: 17, book_id: matthew_id, category: "Blessing", theme: "Revelation", context: "Peter's declaration"},
+  %{text: "And I tell you that you are Peter, and on this rock I will build my church, and the gates of Hades will not overcome it.", reference: "16:18", chapter: 16, verse_start: 18, book_id: matthew_id, category: "Declaration", theme: "Church", context: "Peter's declaration"},
+  %{text: "I will give you the keys of the kingdom of heaven; whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven.", reference: "16:19", chapter: 16, verse_start: 19, book_id: matthew_id, category: "Promise", theme: "Authority", context: "Peter's declaration"},
+  %{text: "Don't tell anyone that I am the Messiah.", reference: "16:20", chapter: 16, verse_start: 20, book_id: matthew_id, category: "Command", theme: "Secrecy", context: "Peter's declaration"},
+  
+  # ===== JESUS PREDICTS HIS DEATH =====
+  %{text: "From that time on Jesus began to explain to his disciples that he must go to Jerusalem and suffer many things at the hands of the elders, the chief priests and the teachers of the law, and that he must be killed and on the third day be raised to life.", reference: "16:21", chapter: 16, verse_start: 21, book_id: matthew_id, category: "Prophecy", theme: "Death", context: "Predicting death"},
+  %{text: "Get behind me, Satan! You are a stumbling block to me; you do not have in mind the concerns of God, but merely human concerns.", reference: "16:23", chapter: 16, verse_start: 23, book_id: matthew_id, category: "Rebuke", theme: "Satan", context: "Rebuking Peter"},
+  %{text: "Whoever wants to be my disciple must deny themselves and take up their cross and follow me.", reference: "16:24", chapter: 16, verse_start: 24, book_id: matthew_id, category: "Command", theme: "Discipleship", context: "Cost of following"},
+  %{text: "For whoever wants to save their life will lose it, but whoever loses their life for me will find it.", reference: "16:25", chapter: 16, verse_start: 25, book_id: matthew_id, category: "Teaching", theme: "Life", context: "Cost of following"},
+  %{text: "What good will it be for someone to gain the whole world, yet forfeit their soul? Or what can anyone give in exchange for their soul?", reference: "16:26", chapter: 16, verse_start: 26, book_id: matthew_id, category: "Question", theme: "Soul", context: "Cost of following"},
+  %{text: "For the Son of Man is going to come in his Father's glory with his angels, and then he will reward each person according to what they have done.", reference: "16:27", chapter: 16, verse_start: 27, book_id: matthew_id, category: "Prophecy", theme: "Return", context: "Future glory"},
+  %{text: "Truly I tell you, some who are standing here will not taste death before they see the Son of Man coming in his kingdom.", reference: "16:28", chapter: 16, verse_start: 28, book_id: matthew_id, category: "Promise", theme: "Kingdom", context: "Future glory"},
+  
+  # ===== THE TRANSFIGURATION =====
+  %{text: "Get up. Don't be afraid.", reference: "17:7", chapter: 17, verse_start: 7, book_id: matthew_id, category: "Command", theme: "Fear", context: "Transfiguration"},
+  %{text: "Don't tell anyone what you have seen, until the Son of Man has been raised from the dead.", reference: "17:9", chapter: 17, verse_start: 9, book_id: matthew_id, category: "Command", theme: "Secrecy", context: "Transfiguration"},
+  %{text: "To be sure, Elijah comes and will restore all things.", reference: "17:11", chapter: 17, verse_start: 11, book_id: matthew_id, category: "Teaching", theme: "Elijah", context: "About Elijah"},
+  %{text: "But I tell you, Elijah has already come, and they did not recognize him, but have done to him everything they wished. In the same way the Son of Man is going to suffer at their hands.", reference: "17:12", chapter: 17, verse_start: 12, book_id: matthew_id, category: "Teaching", theme: "Suffering", context: "About Elijah"},
+  
+  # ===== HEALING THE BOY WITH A DEMON =====
+  %{text: "You unbelieving and perverse generation, how long shall I stay with you? How long shall I put up with you? Bring the boy here to me.", reference: "17:17", chapter: 17, verse_start: 17, book_id: matthew_id, category: "Rebuke", theme: "Unbelief", context: "Demon-possessed boy"},
+  %{text: "Because you have so little faith. Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move. Nothing will be impossible for you.", reference: "17:20", chapter: 17, verse_start: 20, book_id: matthew_id, category: "Teaching", theme: "Faith", context: "Power of faith"},
+  
+  # ===== JESUS PREDICTS HIS DEATH AGAIN =====
+  %{text: "The Son of Man is going to be delivered into the hands of men.", reference: "17:22", chapter: 17, verse_start: 22, book_id: matthew_id, category: "Prophecy", theme: "Betrayal", context: "Second prediction"},
+  %{text: "They will kill him, and on the third day he will be raised to life.", reference: "17:23", chapter: 17, verse_start: 23, book_id: matthew_id, category: "Prophecy", theme: "Resurrection", context: "Second prediction"},
+  
+  # ===== THE TEMPLE TAX =====
+  %{text: "What do you think, Simon? From whom do the kings of the earth collect duty and taxes—from their own children or from others?", reference: "17:25", chapter: 17, verse_start: 25, book_id: matthew_id, category: "Question", theme: "Tax", context: "Temple tax"},
+  %{text: "Then the children are exempt.", reference: "17:26", chapter: 17, verse_start: 26, book_id: matthew_id, category: "Teaching", theme: "Freedom", context: "Temple tax"},
+  %{text: "But so that we may not cause offense, go to the lake and throw out your line. Take the first fish you catch; open its mouth and you will find a four-drachma coin. Take it and give it to them for my tax and yours.", reference: "17:27", chapter: 17, verse_start: 27, book_id: matthew_id, category: "Command", theme: "Provision", context: "Temple tax"},
+  
+  # ===== THE GREATEST IN THE KINGDOM =====
+  %{text: "Who, then, is the greatest in the kingdom of heaven?", reference: "18:1", chapter: 18, verse_start: 1, book_id: matthew_id, category: "Question", theme: "Greatness", context: "Greatest in kingdom"},
+  %{text: "Truly I tell you, unless you change and become like little children, you will never enter the kingdom of heaven.", reference: "18:3", chapter: 18, verse_start: 3, book_id: matthew_id, category: "Teaching", theme: "Childlike", context: "Greatest in kingdom"},
+  %{text: "Therefore, whoever takes the lowly position of this child is the greatest in the kingdom of heaven.", reference: "18:4", chapter: 18, verse_start: 4, book_id: matthew_id, category: "Teaching", theme: "Humility", context: "Greatest in kingdom"},
+  %{text: "And whoever welcomes one such child in my name welcomes me.", reference: "18:5", chapter: 18, verse_start: 5, book_id: matthew_id, category: "Teaching", theme: "Welcome", context: "Greatest in kingdom"},
+  
+  # ===== CAUSING TO STUMBLE =====
+  %{text: "If anyone causes one of these little ones—those who believe in me—to stumble, it would be better for them to have a large millstone hung around their neck and to be drowned in the depths of the sea.", reference: "18:6", chapter: 18, verse_start: 6, book_id: matthew_id, category: "Warning", theme: "Stumbling", context: "Causing to sin"},
+  %{text: "Woe to the world because of the things that cause people to stumble! Such things must come, but woe to the person through whom they come!", reference: "18:7", chapter: 18, verse_start: 7, book_id: matthew_id, category: "Warning", theme: "Stumbling", context: "Causing to sin"},
+  %{text: "If your hand or your foot causes you to stumble, cut it off and throw it away. It is better for you to enter life maimed or crippled than to have two hands or two feet and be thrown into eternal fire.", reference: "18:8", chapter: 18, verse_start: 8, book_id: matthew_id, category: "Command", theme: "Sin", context: "Causing to sin"},
+  %{text: "And if your eye causes you to stumble, gouge it out and throw it away. It is better for you to enter life with one eye than to have two eyes and be thrown into the fire of hell.", reference: "18:9", chapter: 18, verse_start: 9, book_id: matthew_id, category: "Command", theme: "Sin", context: "Causing to sin"},
+  
+  # ===== THE PARABLE OF THE WANDERING SHEEP =====
+  %{text: "See that you do not despise one of these little ones. For I tell you that their angels in heaven always see the face of my Father in heaven.", reference: "18:10", chapter: 18, verse_start: 10, book_id: matthew_id, category: "Warning", theme: "Angels", context: "Lost sheep parable"},
+  %{text: "What do you think? If a man owns a hundred sheep, and one of them wanders away, will he not leave the ninety-nine on the hills and go to look for the one that wandered off?", reference: "18:12", chapter: 18, verse_start: 12, book_id: matthew_id, category: "Question", theme: "Lost", context: "Lost sheep parable"},
+  %{text: "And if he finds it, truly I tell you, he is happier about that one sheep than about the ninety-nine that did not wander off.", reference: "18:13", chapter: 18, verse_start: 13, book_id: matthew_id, category: "Teaching", theme: "Joy", context: "Lost sheep parable"},
+  %{text: "In the same way your Father in heaven is not willing that any of these little ones should perish.", reference: "18:14", chapter: 18, verse_start: 14, book_id: matthew_id, category: "Teaching", theme: "God's Will", context: "Lost sheep parable"},
+  
+  # ===== DEALING WITH SIN IN THE CHURCH =====
+  %{text: "If your brother or sister sins, go and point out their fault, just between the two of you. If they listen to you, you have won them over.", reference: "18:15", chapter: 18, verse_start: 15, book_id: matthew_id, category: "Command", theme: "Confrontation", context: "Church discipline"},
+  %{text: "But if they will not listen, take one or two others along, so that 'every matter may be established by the testimony of two or three witnesses.'", reference: "18:16", chapter: 18, verse_start: 16, book_id: matthew_id, category: "Command", theme: "Witnesses", context: "Church discipline"},
+  %{text: "If they still refuse to listen, tell it to the church; and if they refuse to listen even to the church, treat them as you would a pagan or a tax collector.", reference: "18:17", chapter: 18, verse_start: 17, book_id: matthew_id, category: "Command", theme: "Discipline", context: "Church discipline"},
+  %{text: "Truly I tell you, whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven.", reference: "18:18", chapter: 18, verse_start: 18, book_id: matthew_id, category: "Promise", theme: "Authority", context: "Church discipline"},
+  %{text: "Again, truly I tell you that if two of you on earth agree about anything they ask for, it will be done for them by my Father in heaven.", reference: "18:19", chapter: 18, verse_start: 19, book_id: matthew_id, category: "Promise", theme: "Agreement", context: "Prayer"},
+  %{text: "For where two or three gather in my name, there am I with them.", reference: "18:20", chapter: 18, verse_start: 20, book_id: matthew_id, category: "Promise", theme: "Presence", context: "Gathering"},
+  
+  # ===== THE PARABLE OF THE UNMERCIFUL SERVANT =====
+  %{text: "How many times shall I forgive my brother or sister who sins against me? Up to seven times?", reference: "18:21", chapter: 18, verse_start: 21, book_id: matthew_id, category: "Question", theme: "Forgiveness", context: "Unmerciful servant"},
+  %{text: "Not seven times, but seventy-seven times.", reference: "18:22", chapter: 18, verse_start: 22, book_id: matthew_id, category: "Teaching", theme: "Forgiveness", context: "Unmerciful servant"},
+  %{text: "Therefore, the kingdom of heaven is like a king who wanted to settle accounts with his servants.", reference: "18:23", chapter: 18, verse_start: 23, book_id: matthew_id, category: "Parable", theme: "Kingdom", context: "Unmerciful servant"},
+  
+  # ===== MORE MARK SAYINGS =====
+  %{text: "Why does this generation ask for a sign? Truly I tell you, no sign will be given to it.", reference: "8:12", chapter: 8, verse_start: 12, book_id: mark_id, category: "Question", theme: "Signs", context: "Pharisees demand sign"},
+  %{text: "Watch out for the yeast of the Pharisees and that of Herod.", reference: "8:15", chapter: 8, verse_start: 15, book_id: mark_id, category: "Warning", theme: "Teaching", context: "Yeast warning"},
+  %{text: "Why are you talking about having no bread? Do you still not see or understand? Are your hearts hardened?", reference: "8:17", chapter: 8, verse_start: 17, book_id: mark_id, category: "Question", theme: "Understanding", context: "Disciples' confusion"},
+  %{text: "Do you have eyes but fail to see, and ears but fail to hear? And don't you remember?", reference: "8:18", chapter: 8, verse_start: 18, book_id: mark_id, category: "Question", theme: "Perception", context: "Disciples' confusion"},
+  %{text: "When I broke the five loaves for the five thousand, how many basketfuls of pieces did you pick up?", reference: "8:19", chapter: 8, verse_start: 19, book_id: mark_id, category: "Question", theme: "Memory", context: "Recalling miracles"},
+  %{text: "And when I broke the seven loaves for the four thousand, how many basketfuls of pieces did you pick up?", reference: "8:20", chapter: 8, verse_start: 20, book_id: mark_id, category: "Question", theme: "Memory", context: "Recalling miracles"},
+  %{text: "Do you still not understand?", reference: "8:21", chapter: 8, verse_start: 21, book_id: mark_id, category: "Question", theme: "Understanding", context: "Disciples' slowness"},
+  
+  # ===== HEALING THE BLIND MAN =====
+  %{text: "Do you see anything?", reference: "8:23", chapter: 8, verse_start: 23, book_id: mark_id, category: "Question", theme: "Sight", context: "Healing blind man"},
+  %{text: "Don't even go into the village.", reference: "8:26", chapter: 8, verse_start: 26, book_id: mark_id, category: "Command", theme: "Secrecy", context: "Healed blind man"},
+  
+  # ===== MORE LUKE SAYINGS =====
+  %{text: "Woe to you, Chorazin! Woe to you, Bethsaida! For if the miracles that were performed in you had been performed in Tyre and Sidon, they would have repented long ago, sitting in sackcloth and ashes.", reference: "10:13", chapter: 10, verse_start: 13, book_id: luke_id, category: "Woe", theme: "Repentance", context: "Woe to unrepentant cities"},
+  %{text: "But it will be more bearable for Tyre and Sidon at the judgment than for you.", reference: "10:14", chapter: 10, verse_start: 14, book_id: luke_id, category: "Warning", theme: "Judgment", context: "Woe to unrepentant cities"},
+  %{text: "And you, Capernaum, will you be lifted to the heavens? No, you will go down to Hades.", reference: "10:15", chapter: 10, verse_start: 15, book_id: luke_id, category: "Warning", theme: "Judgment", context: "Woe to Capernaum"},
+  %{text: "Whoever listens to you listens to me; whoever rejects you rejects me; but whoever rejects me rejects him who sent me.", reference: "10:16", chapter: 10, verse_start: 16, book_id: luke_id, category: "Teaching", theme: "Authority", context: "Sending the seventy-two"},
+  %{text: "I saw Satan fall like lightning from heaven.", reference: "10:18", chapter: 10, verse_start: 18, book_id: luke_id, category: "Declaration", theme: "Satan", context: "Return of seventy-two"},
+  %{text: "I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy; nothing will harm you.", reference: "10:19", chapter: 10, verse_start: 19, book_id: luke_id, category: "Promise", theme: "Authority", context: "Return of seventy-two"},
+  %{text: "However, do not rejoice that the spirits submit to you, but rejoice that your names are written in heaven.", reference: "10:20", chapter: 10, verse_start: 20, book_id: luke_id, category: "Command", theme: "Rejoicing", context: "Return of seventy-two"},
+  
+  # ===== MORE JOHN SAYINGS =====
+  %{text: "Very truly I tell you, before Abraham was born, I am!", reference: "8:58", chapter: 8, verse_start: 58, book_id: john_id, category: "Declaration", theme: "I AM", context: "Before Abraham"},
+  %{text: "Neither this man nor his parents sinned, but this happened so that the works of God might be displayed in him.", reference: "9:3", chapter: 9, verse_start: 3, book_id: john_id, category: "Teaching", theme: "Suffering", context: "Man born blind"},
+  %{text: "As long as it is day, we must do the works of him who sent me. Night is coming, when no one can work.", reference: "9:4", chapter: 9, verse_start: 4, book_id: john_id, category: "Teaching", theme: "Work", context: "Man born blind"},
+  %{text: "While I am in the world, I am the light of the world.", reference: "9:5", chapter: 9, verse_start: 5, book_id: john_id, category: "Declaration", theme: "Light", context: "Man born blind"},
+  %{text: "Go, wash in the Pool of Siloam.", reference: "9:7", chapter: 9, verse_start: 7, book_id: john_id, category: "Command", theme: "Healing", context: "Man born blind"},
+  %{text: "Do you believe in the Son of Man?", reference: "9:35", chapter: 9, verse_start: 35, book_id: john_id, category: "Question", theme: "Belief", context: "Healed blind man"},
+  %{text: "You have now seen him; in fact, he is the one speaking with you.", reference: "9:37", chapter: 9, verse_start: 37, book_id: john_id, category: "Declaration", theme: "Identity", context: "Healed blind man"},
+  %{text: "For judgment I have come into this world, so that the blind will see and those who see will become blind.", reference: "9:39", chapter: 9, verse_start: 39, book_id: john_id, category: "Teaching", theme: "Judgment", context: "Spiritual blindness"},
+  %{text: "If you were blind, you would not be guilty of sin; but now that you claim you can see, your guilt remains.", reference: "9:41", chapter: 9, verse_start: 41, book_id: john_id, category: "Teaching", theme: "Guilt", context: "Pharisees' blindness"},
+  
   # ===== FINAL SAYINGS =====
   %{text: "Father, forgive them, for they do not know what they are doing.", reference: "23:34", chapter: 23, verse_start: 34, book_id: luke_id, category: "Prayer", theme: "Forgiveness", context: "Crucifixion"},
   %{text: "Truly I tell you, today you will be with me in paradise.", reference: "23:43", chapter: 23, verse_start: 43, book_id: luke_id, category: "Promise", theme: "Paradise", context: "Crucifixion"},
