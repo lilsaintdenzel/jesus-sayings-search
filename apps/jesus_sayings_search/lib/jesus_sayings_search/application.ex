@@ -7,8 +7,8 @@ defmodule JesusSayingsSearch.Application do
 
   @impl true
   def start(_type, _args) do
-    # Run migrations and seeding on startup if in production
-    if Application.get_env(:jesus_sayings_search, :env) == :prod and System.get_env("DATABASE_URL") do
+    # Run migrations and seeding on startup if DATABASE_URL is available
+    if System.get_env("DATABASE_URL") do
       try do
         IO.puts("🔧 Running migrations...")
         JesusSayingsSearch.Release.migrate()
