@@ -5,7 +5,7 @@ defmodule JesusSayingsSearchWeb.SayingsController do
   alias JesusSayingsSearch.Books.Book
 
   def index(conn, params) do
-    if database_available?() do
+    if database_available?() and database_ready?() do
       search_query = params["search"] || ""
       category_filter = params["category"]
       theme_filter = params["theme"]
@@ -59,7 +59,7 @@ defmodule JesusSayingsSearchWeb.SayingsController do
   end
 
   def show(conn, %{"id" => id}) do
-    if database_available?() do
+    if database_available?() and database_ready?() do
       saying = Saying.get!(id) |> Ash.load!([:book])
       render(conn, :show, saying: saying)
     else
@@ -71,6 +71,15 @@ defmodule JesusSayingsSearchWeb.SayingsController do
 
   defp database_available? do
     System.get_env("DATABASE_URL") != nil
+  end
+
+  defp database_ready? do
+    try do
+      JesusSayingsSearch.Repo.query!("SELECT 1")
+      true
+    rescue
+      _ -> false
+    end
   end
 
   defp get_unique_categories do
