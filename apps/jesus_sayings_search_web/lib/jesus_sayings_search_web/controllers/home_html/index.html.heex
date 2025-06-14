@@ -210,9 +210,20 @@
       </div>
     </div>
     
+    <!-- Footer -->
+    <footer class="absolute bottom-0 w-full">
+      <div class="text-center py-4">
+        <div class="text-xs text-gray-500">
+          © <span id="current-year"></span> PreachCode
+        </div>
+      </div>
+    </footer>
 
     <!-- JavaScript for Google-like functionality -->
     <script>
+      // Set current year dynamically
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      
       // Search suggestions
       const searchSuggestions = [
         'blessed', 'love your enemies', 'faith', 'prayer', 'kingdom of heaven', 'eternal life', 
