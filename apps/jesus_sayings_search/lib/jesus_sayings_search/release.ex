@@ -33,7 +33,7 @@ defmodule JesusSayingsSearch.Release do
             # Clear existing sayings and reseed completely to avoid duplicates
             IO.puts("Clearing existing sayings to avoid duplicates...")
             Enum.each(current_sayings, fn saying ->
-              JesusSayingsSearch.Sayings.Saying.destroy!(saying)
+              Ash.destroy!(saying)
             end)
             run_complete_seeding()
             
@@ -56,7 +56,21 @@ defmodule JesusSayingsSearch.Release do
       Code.eval_file(seed_script)
     end
     
-    # Then run the comprehensive expansion
+    # Run comprehensive seeds
+    comprehensive_script = Path.join([Application.app_dir(@app), "priv", "repo", "comprehensive_seeds.exs"])
+    if File.exists?(comprehensive_script) do
+      IO.puts("Running comprehensive seeds...")
+      Code.eval_file(comprehensive_script)
+    end
+    
+    # Run complete canonical expansion
+    complete_script = Path.join([Application.app_dir(@app), "priv", "repo", "complete_canonical_expansion.exs"])
+    if File.exists?(complete_script) do
+      IO.puts("Running complete canonical expansion...")
+      Code.eval_file(complete_script)
+    end
+    
+    # Finally run the final expansion
     final_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "final_600_expansion.exs"])
     if File.exists?(final_seed_script) do
       IO.puts("Running final 600 expansion...")
