@@ -1,1 +1,2 @@
-web: mix run run_migrations.exs && mix run seed_once.exs && _build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella start
+release: _build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella eval "JesusSayingsSearch.Release.migrate()"
+web: _build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella start
