@@ -7,6 +7,22 @@ defmodule JesusSayingsSearch.Application do
 
   @impl true
   def start(_type, _args) do
+    # Run migrations and seeding on startup if in production
+    if Application.get_env(:jesus_sayings_search, :env) == :prod and System.get_env("DATABASE_URL") do
+      try do
+        IO.puts("🔧 Running migrations...")
+        JesusSayingsSearch.Release.migrate()
+        IO.puts("✅ Migrations completed")
+        
+        IO.puts("🌱 Seeding database...")
+        JesusSayingsSearch.Release.seed()
+        IO.puts("✅ Seeding completed")
+      rescue
+        e ->
+          IO.puts("❌ Migration/seeding failed: #{inspect(e)}")
+      end
+    end
+
     children = [
       {DNSCluster, query: Application.get_env(:jesus_sayings_search, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: JesusSayingsSearch.PubSub},
