@@ -15,37 +15,44 @@ defmodule JesusSayingsSearch.Release do
 
   def seed do
     load_app()
-    
+
     for repo <- repos() do
       {:ok, _, _} = Ecto.Migrator.with_repo(repo, fn _repo ->
-        # Run the comprehensive seed files
-        seed_files = [
-          "seeds.exs",  # Basic books and initial sayings
-          "final_600_expansion.exs"  # All 550+ canonical sayings
-        ]
-        
-        for seed_file <- seed_files do
-          seed_script = Path.join([Application.app_dir(@app), "priv", "repo", seed_file])
-          if File.exists?(seed_script) do
-            IO.puts("📖 Running #{seed_file}...")
-            try do
+        # Check if database is already seeded
+        case JesusSayingsSearch.Sayings.Saying.read!() do
+          [] ->
+            IO.puts("Database is empty. Running full seeding process...")
+            
+            # Run the basic seeds first (creates books)
+            seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "seeds.exs"])
+            if File.exists?(seed_script) do
+              IO.puts("Running basic seeds...")
               Code.eval_file(seed_script)
-              IO.puts("✅ Completed #{seed_file}")
-            rescue
-              e ->
-                IO.puts("❌ Error in #{seed_file}: #{inspect(e)}")
             end
-          else
-            IO.puts("⚠️ File not found: #{seed_file}")
-          end
-        end
-        
-        # Count final sayings
-        case JesusSayingsSearch.Sayings.Saying.read() do
-          {:ok, final_sayings} ->
-            IO.puts("📊 Total sayings in database: #{length(final_sayings)}")
-          _ ->
-            IO.puts("⚠️ Could not count final sayings")
+            
+            # Then run the comprehensive expansion
+            final_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "final_600_expansion.exs"])
+            if File.exists?(final_seed_script) do
+              IO.puts("Running final 600 expansion...")
+              Code.eval_file(final_seed_script)
+            else
+              IO.puts("Warning: final_600_expansion.exs not found!")
+            end
+            
+          sayings ->
+            count = length(sayings)
+            IO.puts("Database already has #{count} sayings. Skipping seeding.")
+            
+            if count < 500 do
+              IO.puts("Warning: Expected 550+ sayings but found #{count}. Consider re-seeding.")
+              
+              # Try to run the comprehensive expansion if we have less than expected
+              final_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "final_600_expansion.exs"])
+              if File.exists?(final_seed_script) do
+                IO.puts("Running final 600 expansion to complete dataset...")
+                Code.eval_file(final_seed_script)
+              end
+            end
         end
       end)
     end
