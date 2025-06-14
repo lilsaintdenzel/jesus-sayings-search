@@ -23,6 +23,14 @@ defmodule JesusSayingsSearch.Application do
       children
     end
 
-    Supervisor.start_link(children, strategy: :one_for_one, name: JesusSayingsSearch.Supervisor)
+    # Use :one_for_one strategy but allow repo to fail without crashing the app
+    opts = [
+      strategy: :one_for_one, 
+      name: JesusSayingsSearch.Supervisor,
+      max_restarts: 3,
+      max_seconds: 5
+    ]
+    
+    Supervisor.start_link(children, opts)
   end
 end
