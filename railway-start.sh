@@ -6,6 +6,12 @@ echo "🚀 Starting Jesus Sayings Search on Railway..."
 # Set the release path
 RELEASE_PATH="_build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella"
 
+# Debug environment variables
+echo "🔍 Environment Check:"
+echo "PORT: $PORT"
+echo "RAILWAY_PUBLIC_DOMAIN: $RAILWAY_PUBLIC_DOMAIN"
+echo "DATABASE_URL: ${DATABASE_URL:0:20}..." # Show first 20 chars only
+
 # Check if DATABASE_URL is set
 if [ -z "$DATABASE_URL" ]; then
     echo "❌ ERROR: DATABASE_URL environment variable is not set"

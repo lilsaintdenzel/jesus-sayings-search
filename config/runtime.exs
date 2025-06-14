@@ -41,6 +41,7 @@ if config_env() == :prod do
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
       port: String.to_integer(System.get_env("PORT") || "4000")
     ],
+    url: [host: System.get_env("RAILWAY_PUBLIC_DOMAIN") || "localhost", port: 443, scheme: "https"],
     secret_key_base: secret_key_base,
     server: true
 
