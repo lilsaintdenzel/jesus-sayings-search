@@ -47,18 +47,18 @@ defmodule JesusSayingsSearch.Release do
   end
 
   defp run_complete_seeding do
-    # Use massive direct SQL seeding to get all 550+ sayings
-    massive_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "massive_direct_seed.exs"])
-    if File.exists?(massive_seed_script) do
-      IO.puts("Running massive direct SQL seeding for 550+ sayings...")
-      Code.eval_file(massive_seed_script)
+    # Use complete exhaustive seeding - EVERY saying from Matthew 3:15 to John 19:30
+    exhaustive_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "complete_exhaustive_seed.exs"])
+    if File.exists?(exhaustive_seed_script) do
+      IO.puts("Running COMPLETE EXHAUSTIVE seeding - every Jesus saying from Matthew 3:15 to John 19:30...")
+      Code.eval_file(exhaustive_seed_script)
     else
-      IO.puts("Warning: massive_direct_seed.exs not found! Falling back to direct seed...")
-      # Fallback to basic direct seed
-      direct_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "direct_seed.exs"])
-      if File.exists?(direct_seed_script) do
-        IO.puts("Running direct SQL seeding...")
-        Code.eval_file(direct_seed_script)
+      IO.puts("Warning: complete_exhaustive_seed.exs not found! Falling back to massive seed...")
+      # Fallback to massive seed
+      massive_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "massive_direct_seed.exs"])
+      if File.exists?(massive_seed_script) do
+        IO.puts("Running massive direct SQL seeding for 550+ sayings...")
+        Code.eval_file(massive_seed_script)
       end
     end
   end
