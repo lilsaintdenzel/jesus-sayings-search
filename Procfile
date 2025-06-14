@@ -1,1 +1,1 @@
-web: mix run run_migrations.exs && _build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella start
+web: mix run run_migrations.exs && mix run seed_once.exs && _build/prod/rel/jesus_sayings_search_umbrella/bin/jesus_sayings_search_umbrella start
