@@ -1,11 +1,11 @@
 # fly.toml app configuration file
-app = "jesus-sayings-search"
+app = "lilsaintdenzel-jesus-sayings"
 primary_region = "sjc"
 
 [build]
 
 [env]
-PHX_HOST = "jesus-sayings-search.fly.dev"
+PHX_HOST = "lilsaintdenzel-jesus-sayings.fly.dev"
 PORT = "8080"
 
 [http_service]
@@ -24,4 +24,4 @@ timeout = "5s"
 path = "/healthcheck"
 
 [deploy]
-release_command = "/app/bin/migrate"
+# release_command = "/app/bin/migrate"

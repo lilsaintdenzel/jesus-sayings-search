@@ -7,7 +7,8 @@ defmodule JesusSayingsSearch.Umbrella.MixProject do
       version: "0.1.0",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: aliases()
+      aliases: aliases(),
+      releases: releases()
     ]
   end
 
@@ -43,6 +44,17 @@ defmodule JesusSayingsSearch.Umbrella.MixProject do
     [
       # run `mix setup` in all child apps
       setup: ["cmd mix setup"]
+    ]
+  end
+
+  defp releases do
+    [
+      jesus_sayings_search_umbrella: [
+        applications: [
+          jesus_sayings_search: :permanent,
+          jesus_sayings_search_web: :permanent
+        ]
+      ]
     ]
   end
 end
