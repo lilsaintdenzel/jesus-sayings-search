@@ -18,7 +18,8 @@ if config_env() == :prod do
       socket_options: maybe_ipv6,
       ssl: true,
       ssl_opts: [
-        verify: :verify_none
+        verify: :verify_none,
+        log_level: :error
       ]
   end
 
