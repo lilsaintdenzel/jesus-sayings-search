@@ -18,10 +18,18 @@ defmodule JesusSayingsSearch.Release do
     
     for repo <- repos() do
       {:ok, _, _} = Ecto.Migrator.with_repo(repo, fn _repo ->
-        # Run the seed file
-        seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "seeds.exs"])
-        if File.exists?(seed_script) do
-          Code.eval_file(seed_script)
+        # Run the comprehensive seed files
+        seed_files = [
+          "seeds.exs",  # Basic books and initial sayings
+          "final_600_expansion.exs"  # All 550+ canonical sayings
+        ]
+        
+        for seed_file <- seed_files do
+          seed_script = Path.join([Application.app_dir(@app), "priv", "repo", seed_file])
+          if File.exists?(seed_script) do
+            IO.puts("📖 Running #{seed_file}...")
+            Code.eval_file(seed_script)
+          end
         end
       end)
     end
