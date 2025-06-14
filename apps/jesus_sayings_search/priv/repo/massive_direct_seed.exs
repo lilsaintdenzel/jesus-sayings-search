@@ -532,11 +532,14 @@ Enum.with_index(all_sayings, 1) |> Enum.each(fn {saying, index} ->
   id = UUIDHelper.generate()
   verse_end = Map.get(saying, :verse_end)
   
+  {:ok, binary_id} = Ecto.UUID.dump(id)
+  {:ok, binary_book_id} = Ecto.UUID.dump(saying.book_id)
+  
   Repo.query!("""
     INSERT INTO sayings (id, text, reference, chapter, verse_start, verse_end, context, category, theme, book_id, inserted_at, updated_at)
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
   """, [
-    {:ok, binary_id} = Ecto.UUID.dump(id); binary_id,
+    binary_id,
     saying.text,
     saying.reference, 
     saying.chapter,
@@ -545,7 +548,7 @@ Enum.with_index(all_sayings, 1) |> Enum.each(fn {saying, index} ->
     saying.context,
     saying.category,
     saying.theme,
-    {:ok, binary_book_id} = Ecto.UUID.dump(saying.book_id); binary_book_id,
+    binary_book_id,
     now,
     now
   ])
