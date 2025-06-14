@@ -47,34 +47,19 @@ defmodule JesusSayingsSearch.Release do
   end
 
   defp run_complete_seeding do
-    # Run the basic seeds first (creates books)
-    seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "seeds.exs"])
-    if File.exists?(seed_script) do
-      IO.puts("Running basic seeds...")
-      Code.eval_file(seed_script)
-    end
-    
-    # Run comprehensive seeds
-    comprehensive_script = Path.join([Application.app_dir(@app), "priv", "repo", "comprehensive_seeds.exs"])
-    if File.exists?(comprehensive_script) do
-      IO.puts("Running comprehensive seeds...")
-      Code.eval_file(comprehensive_script)
-    end
-    
-    # Run complete canonical expansion
-    complete_script = Path.join([Application.app_dir(@app), "priv", "repo", "complete_canonical_expansion.exs"])
-    if File.exists?(complete_script) do
-      IO.puts("Running complete canonical expansion...")
-      Code.eval_file(complete_script)
-    end
-    
-    # Finally run the final expansion
-    final_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "final_600_expansion.exs"])
-    if File.exists?(final_seed_script) do
-      IO.puts("Running final 600 expansion...")
-      Code.eval_file(final_seed_script)
+    # Use direct SQL seeding to avoid Ash schema issues
+    direct_seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "direct_seed.exs"])
+    if File.exists?(direct_seed_script) do
+      IO.puts("Running direct SQL seeding...")
+      Code.eval_file(direct_seed_script)
     else
-      IO.puts("Warning: final_600_expansion.exs not found!")
+      IO.puts("Warning: direct_seed.exs not found! Falling back to basic seeds...")
+      # Fallback to basic seeds
+      seed_script = Path.join([Application.app_dir(@app), "priv", "repo", "seeds.exs"])
+      if File.exists?(seed_script) do
+        IO.puts("Running basic seeds...")
+        Code.eval_file(seed_script)
+      end
     end
   end
 
