@@ -30,11 +30,9 @@ defmodule JesusSayingsSearch.Release do
             
           count < 500 ->
             IO.puts("Database has #{count} sayings but expected 550+. Running complete seeding...")
-            # Clear existing sayings and reseed completely to avoid duplicates
+            # Clear existing sayings using direct SQL to avoid Ash issues
             IO.puts("Clearing existing sayings to avoid duplicates...")
-            Enum.each(current_sayings, fn saying ->
-              Ash.destroy!(saying)
-            end)
+            JesusSayingsSearch.Repo.query!("TRUNCATE TABLE sayings RESTART IDENTITY CASCADE")
             run_complete_seeding()
             
           true ->
