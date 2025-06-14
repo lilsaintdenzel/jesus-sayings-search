@@ -17,13 +17,6 @@ if config_env() == :prod do
       url: database_url,
       pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
       socket_options: maybe_ipv6
-  else
-    # No database configured - app will start without database features
-    config :jesus_sayings_search, JesusSayingsSearch.Repo,
-      adapter: Ecto.Adapters.Postgres,
-      database: "dummy",
-      hostname: "localhost",
-      pool_size: 0
   end
 
   import Config

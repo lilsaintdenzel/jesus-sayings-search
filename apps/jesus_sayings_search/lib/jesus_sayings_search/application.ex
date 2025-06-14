@@ -8,7 +8,6 @@ defmodule JesusSayingsSearch.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      JesusSayingsSearch.Repo,
       {DNSCluster, query: Application.get_env(:jesus_sayings_search, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: JesusSayingsSearch.PubSub},
       # Start the Finch HTTP client for sending emails
@@ -16,6 +15,13 @@ defmodule JesusSayingsSearch.Application do
       # Start a worker by calling: JesusSayingsSearch.Worker.start_link(arg)
       # {JesusSayingsSearch.Worker, arg}
     ]
+
+    # Only start repo if DATABASE_URL is configured
+    children = if System.get_env("DATABASE_URL") do
+      [JesusSayingsSearch.Repo | children]
+    else
+      children
+    end
 
     Supervisor.start_link(children, strategy: :one_for_one, name: JesusSayingsSearch.Supervisor)
   end
