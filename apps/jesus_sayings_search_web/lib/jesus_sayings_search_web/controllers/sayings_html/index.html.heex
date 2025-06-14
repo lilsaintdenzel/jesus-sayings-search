@@ -1,0 +1,187 @@
+<!-- Google-style search results page -->
+<div class="min-h-screen bg-white">
+  <!-- Header with search -->
+  <div class="border-b border-gray-200 pb-4 mb-6">
+    <div class="max-w-6xl mx-auto px-4 py-3">
+      <div class="flex items-center">
+        <!-- Logo -->
+        <div class="mr-8">
+          <h1 class="text-2xl font-normal" style="font-weight: 400; font-family: 'Product Sans', 'Inter', sans-serif; letter-spacing: -0.02em;">
+            <a href={~p"/"} class="hover:underline">
+              <span class="text-blue-500">J</span><span class="text-red-500">e</span><span class="text-yellow-400">s</span><span class="text-blue-500">u</span><span class="text-green-500">s</span>
+            </a>
+          </h1>
+        </div>
+        
+        <!-- Search form in header -->
+        <div class="flex-1 max-w-2xl">
+          <.form for={%{}} as={:search} action={~p"/sayings"} method="get" class="relative">
+            <div class="relative">
+              <input
+                type="text"
+                name="search"
+                value={@search_query}
+                placeholder="Search the words of Jesus..."
+                class="w-full px-4 py-2 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm hover:shadow-md transition-shadow"
+              />
+              <button type="submit" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
+            </div>
+            
+            <!-- Hidden filters -->
+            <input type="hidden" name="book_id" value={@book_filter} />
+            <input type="hidden" name="category" value={@category_filter} />
+            <input type="hidden" name="theme" value={@theme_filter} />
+          </.form>
+        </div>
+        
+        <!-- Advanced filters toggle -->
+        <div class="ml-4">
+          <button 
+            onclick="document.getElementById('filters').classList.toggle('hidden')"
+            class="text-sm text-blue-600 hover:underline"
+          >
+            Filters
+          </button>
+        </div>
+      </div>
+      
+      <!-- Advanced filters (hidden by default) -->
+      <div id="filters" class="hidden mt-4 p-4 bg-gray-50 rounded-lg">
+        <.form for={%{}} as={:search} action={~p"/sayings"} method="get" class="flex gap-4 items-end">
+          <input type="hidden" name="search" value={@search_query} />
+          
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">Gospel</label>
+            <select 
+              name="book_id" 
+              class="text-sm border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="">All Books</option>
+              <%= for book <- @books do %>
+                <option value={book.id} selected={@book_filter == book.id}><%= book.name %></option>
+              <% end %>
+            </select>
+          </div>
+          
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">Category</label>
+            <select 
+              name="category" 
+              class="text-sm border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="">All Categories</option>
+              <%= for category <- @categories do %>
+                <option value={category} selected={@category_filter == category}><%= category %></option>
+              <% end %>
+            </select>
+          </div>
+          
+          <div>
+            <label class="block text-xs font-medium text-gray-700 mb-1">Theme</label>
+            <select 
+              name="theme" 
+              class="text-sm border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="">All Themes</option>
+              <%= for theme <- @themes do %>
+                <option value={theme} selected={@theme_filter == theme}><%= theme %></option>
+              <% end %>
+            </select>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="px-4 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Apply
+          </button>
+        </.form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Search results -->
+  <div class="max-w-3xl mx-auto px-4">
+    <!-- Results count -->
+    <%= if !Enum.empty?(@sayings) do %>
+      <div class="text-sm text-gray-600 mb-4">
+        About <%= length(@sayings) %> result<%= if length(@sayings) != 1, do: "s" %> 
+        <%= if @search_query != "" do %>
+          for "<%= @search_query %>"
+        <% end %>
+        <span class="text-gray-400">
+          (<%= :rand.uniform(100)/100 |> Float.round(2) %> seconds)
+        </span>
+      </div>
+    <% end %>
+    
+    <!-- Results -->
+    <%= if Enum.empty?(@sayings) do %>
+      <div class="text-center py-16">
+        <div class="text-lg text-gray-600 mb-4">
+          <%= if @search_query == "" and !@category_filter and !@theme_filter and !@book_filter do %>
+            Start your search above to find the words of Jesus
+          <% else %>
+            No results found
+            <%= if @search_query != "" do %>
+              for "<%= @search_query %>"
+            <% end %>
+          <% end %>
+        </div>
+        <div class="text-sm text-gray-500">
+          <%= if @search_query == "" and !@category_filter and !@theme_filter and !@book_filter do %>
+            Try searching for "blessed", "love", "faith", or any other term
+          <% else %>
+            Try different keywords or check your spelling
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <%= for saying <- @sayings do %>
+        <div class="mb-8 group">
+          <!-- Book and reference -->
+          <div class="flex items-center text-sm mb-1">
+            <span class="text-green-700 mr-2">
+              <%= if saying.book do %>
+                <%= saying.book.name %>
+              <% end %>
+            </span>
+            <span class="text-gray-500">
+              <%= saying.reference %>
+            </span>
+            
+            <!-- Tags -->
+            <div class="ml-4 flex gap-2">
+              <%= if saying.category do %>
+                <span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded text-xs">
+                  <%= saying.category %>
+                </span>
+              <% end %>
+              <%= if saying.theme do %>
+                <span class="bg-green-50 text-green-700 px-2 py-0.5 rounded text-xs">
+                  <%= saying.theme %>
+                </span>
+              <% end %>
+            </div>
+          </div>
+          
+          <!-- Main saying text -->
+          <h2 class="text-xl text-blue-600 mb-2 leading-relaxed group-hover:underline cursor-pointer">
+            "<%= saying.text %>"
+          </h2>
+          
+          <!-- Context -->
+          <%= if saying.context do %>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              <%= saying.context %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

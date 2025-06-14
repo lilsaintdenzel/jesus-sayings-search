@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+cd /app
+./bin/jesus_sayings_search_umbrella eval "JesusSayingsSearch.Release.migrate()"

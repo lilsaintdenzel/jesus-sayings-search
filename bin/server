@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+cd /app
+# Start the server
+exec ./bin/jesus_sayings_search_umbrella start
