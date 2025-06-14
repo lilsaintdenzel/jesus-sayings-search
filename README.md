@@ -15,7 +15,7 @@ A comprehensive web application for searching through 550+ canonical sayings of 
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/jesus_sayings_search_umbrella.git
+git clone https://github.com/lilsaintdenzel/jesus-sayings-search.git
 cd jesus_sayings_search_umbrella
 
 # Install dependencies
