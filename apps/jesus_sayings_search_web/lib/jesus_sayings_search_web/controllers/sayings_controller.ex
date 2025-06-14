@@ -11,26 +11,34 @@ defmodule JesusSayingsSearchWeb.SayingsController do
       theme_filter = params["theme"]
       book_filter = params["book_id"]
 
-      sayings = cond do
-        search_query != "" ->
-          Saying.search!(search_query) |> Ash.load!([:book])
+      {sayings, books, categories, themes} = try do
+        sayings = cond do
+          search_query != "" ->
+            Saying.search!(search_query) |> Ash.load!([:book])
 
-        category_filter && category_filter != "" ->
-          Saying.by_category!(category_filter) |> Ash.load!([:book])
+          category_filter && category_filter != "" ->
+            Saying.by_category!(category_filter) |> Ash.load!([:book])
 
-        theme_filter && theme_filter != "" ->
-          Saying.by_theme!(theme_filter) |> Ash.load!([:book])
+          theme_filter && theme_filter != "" ->
+            Saying.by_theme!(theme_filter) |> Ash.load!([:book])
 
-        book_filter && book_filter != "" ->
-          Saying.by_book!(book_filter) |> Ash.load!([:book])
+          book_filter && book_filter != "" ->
+            Saying.by_book!(book_filter) |> Ash.load!([:book])
 
-        true ->
-          Saying.read!() |> Ash.load!([:book])
+          true ->
+            Saying.read!() |> Ash.load!([:book])
+        end
+
+        books = Book.read!()
+        categories = get_unique_categories()
+        themes = get_unique_themes()
+        
+        {sayings, books, categories, themes}
+      rescue
+        e ->
+          IO.inspect(e, label: "Database error")
+          {[], [], [], []}
       end
-
-      books = Book.read!()
-      categories = get_unique_categories()
-      themes = get_unique_themes()
 
       render(conn, :index,
         sayings: sayings,
